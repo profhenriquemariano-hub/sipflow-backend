@@ -17,6 +17,25 @@ const server = http.createServer((req, res) => {
     }));
     return;
   }
+  if (req.url === '/api/menu') {
+  const menu = [
+    {
+      id: 1,
+      name: 'Cappuccino',
+      price: 3.5
+    },
+    {
+      id: 2,
+      name: 'Pastel de Nata',
+      price: 1.5
+    }
+  ];
+
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify(menu));
+  return;
+}
 
   res.statusCode = 404;
   res.setHeader('Content-Type', 'application/json');
